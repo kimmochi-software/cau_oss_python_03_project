@@ -42,6 +42,29 @@ def print_spots(spots):
     for spot in spots:
         print(spot)
 
+def filter_by_name(spots, name): # filter_by_name 함수
+    return [spot for spot in spots if name.lower() in spot.get('name').lower()]
+
+def filter_by_city(spots, city): # filter_by_city 함수
+    return [spot for spot in spots if city.lower() in spot.get('city').lower()]
+
+def filter_by_district(spots, district): # filter_by_district 함수
+    return [spot for spot in spots if district.lower() in spot.get('district').lower()]
+
+def filter_by_ptype(spots, ptype): # filter_by_ptype 함수
+    return [spot for spot in spots if ptype.lower() in spot.get('ptype').lower()]
+
+def filter_by_location(spots, locations): # filter_by_location 함수
+    min_lat, max_lat, min_long, max_long = locations
+    return [
+        spot for spot in spots
+        if float(min_lat) <= float(spot.get('latitude')) <= float(max_lat)
+        and float(min_long) <= float(spot.get('longitude')) <= float(max_long)
+    ]
+
+def sort_by_keyword(spots, keyword): # filter_by_keyword 
+    return sorted(spots, key=lambda spot: spot.get(keyword))
+
 if __name__ == '__main__':
     print("Testing the module...")
     
