@@ -51,9 +51,9 @@ def start_process(path):
             print(keywords)
             keyword = input('type keyword:')
             if keyword in keywords:
-                print("not implemented yet")
-                # fill this block
-            else: print("invalid input")
+                spots = parking_spot_manager.sort_by_keyword(spots, keyword)
+            else:
+                print("invalid input")
         elif select == 4:
             print("Exit") # 4번을 선택하면 Exit을 출력하고 반복을 종료
             break

@@ -62,7 +62,7 @@ def filter_by_location(spots, locations): # filter_by_location 함수
         and float(min_long) <= float(spot.get('longitude')) <= float(max_long)
     ]
 
-def sort_by_keyword(spots, keyword): # filter_by_keyword 
+def sort_by_keyword(spots, keyword): # filter_by_keyword 함수
     return sorted(spots, key=lambda spot: spot.get(keyword))
 
 if __name__ == '__main__':
